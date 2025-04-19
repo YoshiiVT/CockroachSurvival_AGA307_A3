@@ -16,35 +16,46 @@ public class Food : GameBehaviour
     [SerializeField]
     private Collider Collider;
 
+    private bool playerInRange = false;
+
     void Start()
     {
         switch (foodType)
         {
-            case(FoodType.Large):
-            {
+            case FoodType.Large:
                 foodValue = 30;
                 break;
-            }
-            case(FoodType.Medium):
-            {
+            case FoodType.Medium:
                 foodValue = 20;
                 break;
-            }
-            case(FoodType.Small):
-            {
+            case FoodType.Small:
                 foodValue = 10;
                 break;
-            }
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (playerInRange && Input.GetButtonDown("Interact"))
         {
             _GM.Eating(foodValue);
             Destroy(gameObject);
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
 }
