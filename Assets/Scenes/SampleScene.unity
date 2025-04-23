@@ -551,7 +551,7 @@ MonoBehaviour:
   m_VoxelSize: 0.2
   m_MinRegionArea: 10
   m_NavMeshData: {fileID: 23800000, guid: a893b33a566bf974183b1cb8b35938a1, type: 2}
-  m_BuildHeightMesh: 0
+  m_BuildHeightMesh: 1
 --- !u!1 &655729295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,6 +2211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5005677153175330803}
+  distance: 0
+  perceptionDistance: 20
+  wanderRadius: 10
+  wanderTimer: 5
+  searchDuration: 3
 --- !u!195 &5005677153175330803
 NavMeshAgent:
   m_ObjectHideFlags: 0

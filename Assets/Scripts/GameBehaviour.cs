@@ -7,6 +7,8 @@ public class GameBehaviour : MonoBehaviour
     protected static GameManager _GM { get { return GameManager.instance; } }
 
     protected static GameTimer _GT { get { return GameTimer.instance; } }
+
+    protected static EnemyManager _EM { get { return EnemyManager.instance; } }
 }
 
  
