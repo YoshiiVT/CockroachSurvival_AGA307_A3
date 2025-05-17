@@ -7,46 +7,47 @@ public enum GameState
     Start,
     Playing,
     Death,
-    Score
 }
 
 public enum GameDifficulty
 {
-    Starting,
     Easy,
     Medium,
     Hard,
-    Expert
 }
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : SingletonDontDestroy<GameManager>
 {
+    [Header("Player Health")]
     [SerializeField]
     private float health = 100f;
+
+    [Header("Dev View")]
     [SerializeField]
     private float starveValue = 1f;
     [SerializeField]
     private float maxHealth;
+    public GameState gameState;
+    public GameDifficulty gameDifficulty;
+
+    [Header("References")]
     [SerializeField]
     private Image healthBar;
     [SerializeField]
     private TextMeshProUGUI difficulty;
     [SerializeField]
     private TextMeshProUGUI timer;
-    public GameState gameState;
-    public GameDifficulty gameDifficulty; 
+    
 
-    void Awake()
+    void Start()
     {
         maxHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer.text = "Time: " + _GT.gameTime;
         healthBar.fillAmount = health / 100;
-        UpdateDiffuculty(19);
 
 
         if (gameState == GameState.Playing)
@@ -66,22 +67,15 @@ public class GameManager : Singleton<GameManager>
         switch (_difficultyScore)
         {
             case 0:
-                gameDifficulty = GameDifficulty.Starting; break;
-            case 1:
                 gameDifficulty = GameDifficulty.Easy; break;
-            case 2:
+            case 1:
                 gameDifficulty = GameDifficulty.Medium; break;
-            case 3:
+            case 2:
                 gameDifficulty = GameDifficulty.Hard; break;
-            case 4:
-                gameDifficulty = GameDifficulty.Expert; break;
         }
 
         switch (gameDifficulty)
         {
-            case GameDifficulty.Starting:
-                starveValue = 0.5f;
-                break;
             case GameDifficulty.Easy:
                 starveValue = 1f;
                 break;
@@ -90,9 +84,6 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameDifficulty.Hard:
                 starveValue = 2f;
-                break;
-            case GameDifficulty.Expert:
-                starveValue = 3f;
                 break;
         }
 
