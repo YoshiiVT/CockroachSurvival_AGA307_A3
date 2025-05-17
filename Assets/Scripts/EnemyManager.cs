@@ -10,21 +10,29 @@ public enum EnemyDifficulty
 
 public class EnemyManager : Singleton<EnemyManager>
 {
+    [Header("Variables")]
+    [SerializeField]
     EnemyDifficulty enemyDifficulty;
 
-    [SerializeField]
-    private GameObject[] spawnPoints;
-
+    [Header("References")]
     [SerializeField]
     private GameObject humanPrefab;
 
-    public void Start()
+    [Header("Spawn Points List")]
+    [SerializeField]
+    private GameObject[] spawnPoints;
+
+
+    public void Update()
     {
-        StartLevel(enemyDifficulty);
+        if (Input.GetKeyDown(KeyCode.Q)) { StartLevel(_GM.gameDifficulty); }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void StartLevel(EnemyDifficulty _difficulty)
+    /// <summary>
+    /// This function will be called when a level loaded. It determines how many enemies will spawn according to difficulty, and then spawns them using SpawnHumans();
+    /// </summary>
+    /// <param name="_difficulty"></param>
+    public void StartLevel(GameDifficulty _difficulty)
     {
         if (spawnPoints == null || spawnPoints.Length == 0)
         {
@@ -34,7 +42,7 @@ public class EnemyManager : Singleton<EnemyManager>
             
         int spawnCount = 0;
 
-        enemyDifficulty = _difficulty;
+        enemyDifficulty = (EnemyDifficulty)_difficulty;
 
         switch (enemyDifficulty)
         {
@@ -53,6 +61,10 @@ public class EnemyManager : Singleton<EnemyManager>
         SpawnHumans(spawnCount);
     }
 
+    /// <summary>
+    /// This function goes through the spawnpoints list at random and spawns a human in choosen spawnpoint. It will not spawn in a spawn point that has already been used.
+    /// </summary>
+    /// <param name="_spawnCount"></param>
     private void SpawnHumans(int _spawnCount)
     {
         List<int> usedSpawnPoints = new List<int>();
@@ -73,7 +85,11 @@ public class EnemyManager : Singleton<EnemyManager>
 
             GameObject spawnPoint = spawnPoints[usingSpawnPoint];
 
-            if (spawnPoint != null) { Instantiate(humanPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation); }
+            if (spawnPoint != null) 
+            { 
+                GameObject spawnedHuman = Instantiate(humanPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                spawnedHuman.GetComponent<Human>().Initialize(enemyDifficulty);
+            }
             else { Debug.LogWarning("Spawn point at count " + usingSpawnPoint + "is null."); }
 
         }

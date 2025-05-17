@@ -9,7 +9,6 @@ public class GameTimer : Singleton<GameTimer>
     void Start()
     {
         StartCoroutine(Timer());
-        _GM.UpdateDiffuculty(0);
     }
 
     private void Update()

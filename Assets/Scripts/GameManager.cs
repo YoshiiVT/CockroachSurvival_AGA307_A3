@@ -106,6 +106,10 @@ public class GameManager : SingletonDontDestroy<GameManager>
         health += food;
     }
 
+    public void BeenHit(int _damage)
+    {
+        health -= _damage;
+    }
     private void Die()
     {
         gameState = GameState.Death;

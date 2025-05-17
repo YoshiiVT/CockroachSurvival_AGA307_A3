@@ -8434,9 +8434,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 444952156100944841, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: gameDifficulty
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1056773119207622202, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880672775046728547, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5115745638819509582, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8476,6 +8484,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5115745638819509582, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871224280548415115, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871224280548415115, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5871224280548415115, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21248,6 +21268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469bdd2c36952144793e51f604cedcbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDifficulty: 0
   spawnPoints:
   - {fileID: 1529723776}
   - {fileID: 956122197}
@@ -30289,6 +30310,10 @@ PrefabInstance:
     - target: {fileID: 8374673264810290452, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
       propertyPath: m_Name
       value: Cockroach 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374673264810290452, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
