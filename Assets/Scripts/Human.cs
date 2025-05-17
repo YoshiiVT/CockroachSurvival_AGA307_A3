@@ -26,8 +26,6 @@ public class Human : GameBehaviour
 
     void Update()
     {
-        _EM
-
         distance = Vector3.Distance(transform.position, _CM.transform.position);
 
         // Player is within perception distance we follow them
