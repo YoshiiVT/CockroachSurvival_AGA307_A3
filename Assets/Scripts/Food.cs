@@ -13,6 +13,7 @@ public class Food : GameBehaviour
     FoodType foodType;
     [SerializeField]
     private int foodValue;
+    private int pointValue;
     [SerializeField]
     private Collider Collider;
 
@@ -24,12 +25,15 @@ public class Food : GameBehaviour
         {
             case FoodType.Large:
                 foodValue = 30;
+                pointValue = 300;
                 break;
             case FoodType.Medium:
                 foodValue = 20;
+                pointValue = 200;
                 break;
             case FoodType.Small:
                 foodValue = 10;
+                pointValue = 100;
                 break;
         }
     }

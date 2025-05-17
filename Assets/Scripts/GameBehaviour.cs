@@ -9,6 +9,8 @@ public class GameBehaviour : MonoBehaviour
     protected static GameTimer _GT { get { return GameTimer.instance; } }
 
     protected static EnemyManager _EM { get { return EnemyManager.instance; } }
+
+    protected static TrashManager _TM { get { return TrashManager.instance; }}
 }
 
  

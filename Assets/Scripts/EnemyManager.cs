@@ -23,16 +23,11 @@ public class EnemyManager : Singleton<EnemyManager>
     private GameObject[] spawnPoints;
 
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q)) { StartLevel(_GM.gameDifficulty); }
-    }
-
     /// <summary>
     /// This function will be called when a level loaded. It determines how many enemies will spawn according to difficulty, and then spawns them using SpawnHumans();
     /// </summary>
     /// <param name="_difficulty"></param>
-    public void StartLevel(GameDifficulty _difficulty)
+    public void StartEnemies(GameDifficulty _difficulty)
     {
         if (spawnPoints == null || spawnPoints.Length == 0)
         {

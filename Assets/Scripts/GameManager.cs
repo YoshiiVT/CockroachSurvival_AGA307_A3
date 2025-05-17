@@ -115,4 +115,11 @@ public class GameManager : SingletonDontDestroy<GameManager>
         gameState = GameState.Death;
         _CM.Death();
     }
+
+    public void StartLevel (GameDifficulty _LevelDifficulty)
+    {
+        _EM.StartEnemies(_LevelDifficulty);
+        _TM.StartTrash(_LevelDifficulty);
+
+    }
 }
