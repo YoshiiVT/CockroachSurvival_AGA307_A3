@@ -38,6 +38,8 @@ public class GameManager : SingletonDontDestroy<GameManager>
     private Image healthBar;
     [SerializeField]
     private TextMeshProUGUI difficulty;
+    [SerializeField]
+    public AudioSource OutofGame;
     
     
 
@@ -121,6 +123,7 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     public IEnumerator LoadingLevel()
     {
+        OutofGame.Pause();
         health = maxHealth;
         _GM.gameState = GameState.Playing;
         yield return new WaitForSeconds(0.2f);

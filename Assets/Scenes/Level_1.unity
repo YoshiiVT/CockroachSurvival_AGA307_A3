@@ -31071,6 +31071,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2041676811627526830, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: eb780a540daa2214f868a59ebbc692b2, type: 3}
+    - target: {fileID: 2041676811627526830, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eb780a540daa2214f868a59ebbc692b2, type: 3}
+    - target: {fileID: 5628644932248696317, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5762440055102036167, guid: cfc38e750f9d7b84992c294ad3ece9c3, type: 3}
       propertyPath: m_LocalPosition.y
       value: 24

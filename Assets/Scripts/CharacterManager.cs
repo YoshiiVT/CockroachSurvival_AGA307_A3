@@ -15,6 +15,10 @@ public class CharacterManager : Singleton<CharacterManager>
     private CharacterController controller;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private AudioSource walkSound;
+    [SerializeField]
+    private AudioSource eatSound;
 
     [Header("CharacterSettings")]
     public float speed = 10f;
@@ -35,14 +39,20 @@ public class CharacterManager : Singleton<CharacterManager>
     {
         //Maybe move this later incase something increases the speed
         sprint = speed * 2;
+        walkSound.enabled = false;
+        eatSound.enabled = false;
     }
 
     private void Update()
     {
-        if (_GM.gameState != GameState.Playing) return;
+        if (_GM.gameState != GameState.Playing)
+        {
+            walkSound.enabled = false;
+            eatSound.enabled = false;
+            return;
+        }
+            
         if (action != CharacterAction.None) return;
-
-        
 
         // Get movement input
         float x = Input.GetAxis("Horizontal");
@@ -57,9 +67,10 @@ public class CharacterManager : Singleton<CharacterManager>
 
         if (x != 0 || z != 0)
         {
+            walkSound.enabled = true;
             animator.SetBool("isMoving", true);
         }
-        else animator.SetBool("isMoving", false);
+        else { animator.SetBool("isMoving", false); walkSound.enabled = false; }
 
 
         if (Input.GetButton("Sprint"))
@@ -95,8 +106,10 @@ public class CharacterManager : Singleton<CharacterManager>
         x = 0 ; z = 0;
         action = CharacterAction.Eating;
         animator.SetTrigger("Eat");
+        eatSound.enabled = true;
         yield return new WaitForSeconds(0.5f);
         action = CharacterAction.None;
+        eatSound.enabled = false;
     }
 
     public void Death()

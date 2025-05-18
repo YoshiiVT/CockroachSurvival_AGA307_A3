@@ -7,6 +7,7 @@ public class Human : GameBehaviour
     [Header("References")]
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private CapsuleCollider stompCollider;
+    [SerializeField] private AudioSource stompSound;
 
     [Header("Variables")]
     [SerializeField] private float distance;
@@ -67,6 +68,7 @@ public class Human : GameBehaviour
 
     void Update()
     {
+        if (_GM.gameState != GameState.Playing) { return; }
         distance = Vector3.Distance(transform.position, _CM.transform.position);
 
         if (distance < attackRange && !isAttacking)
@@ -146,6 +148,7 @@ public class Human : GameBehaviour
         Debug.Log("Attack Starting");
         agent.speed = 0;
         yield return new WaitForSeconds(0.1f);
+        stompSound.Play();
         stompCollider.enabled = true;
         StartCoroutine(StompCooldown());
     }

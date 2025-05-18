@@ -29,6 +29,7 @@ public class SceneHandler : Singleton<SceneHandler>
     public void SceneLoad(string _Scene)
     {
         SceneManager.LoadScene(_Scene);
+        _GM.OutofGame.UnPause();
         _GM.gameState = GameState.Start;
         _UI.Toggle("null");
     }
