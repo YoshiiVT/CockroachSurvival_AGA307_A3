@@ -1043,6 +1043,7 @@ GameObject:
   - component: {fileID: 488477776}
   - component: {fileID: 488477775}
   - component: {fileID: 488477774}
+  - component: {fileID: 488477777}
   m_Layer: 5
   m_Name: Level 3 Easy
   m_TagString: Untagged
@@ -1152,6 +1153,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488477772}
   m_CullTransparentMesh: 1
+--- !u!114 &488477777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488477772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 488477774}
+  buttonCommand: LoadLevel3E
 --- !u!1 &508944272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1179,7 @@ GameObject:
   - component: {fileID: 508944276}
   - component: {fileID: 508944275}
   - component: {fileID: 508944274}
+  - component: {fileID: 508944277}
   m_Layer: 5
   m_Name: Level 3 Hard
   m_TagString: Untagged
@@ -1273,6 +1289,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508944272}
   m_CullTransparentMesh: 1
+--- !u!114 &508944277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508944272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 508944274}
+  buttonCommand: LoadLevel3H
 --- !u!1 &521416002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1439,7 @@ GameObject:
   - component: {fileID: 618884504}
   - component: {fileID: 618884503}
   - component: {fileID: 618884502}
+  - component: {fileID: 618884505}
   m_Layer: 5
   m_Name: Level 2 Easy
   m_TagString: Untagged
@@ -1518,6 +1549,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618884500}
   m_CullTransparentMesh: 1
+--- !u!114 &618884505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618884500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 618884502}
+  buttonCommand: LoadLevel2E
 --- !u!1 &627349277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1711,7 @@ GameObject:
   - component: {fileID: 670881965}
   - component: {fileID: 670881964}
   - component: {fileID: 670881963}
+  - component: {fileID: 670881966}
   m_Layer: 5
   m_Name: Level 2 Med
   m_TagString: Untagged
@@ -1775,6 +1821,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670881961}
   m_CullTransparentMesh: 1
+--- !u!114 &670881966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670881961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 670881963}
+  buttonCommand: LoadLevel2M
 --- !u!1 &698044969
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3095,7 @@ GameObject:
   - component: {fileID: 1326938584}
   - component: {fileID: 1326938583}
   - component: {fileID: 1326938582}
+  - component: {fileID: 1326938585}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -3144,6 +3205,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326938580}
   m_CullTransparentMesh: 1
+--- !u!114 &1326938585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326938580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1326938582}
+  buttonCommand: LoadMainMenu
 --- !u!1 &1338674505
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,6 +3367,7 @@ GameObject:
   - component: {fileID: 1505190997}
   - component: {fileID: 1505190996}
   - component: {fileID: 1505190995}
+  - component: {fileID: 1505190998}
   m_Layer: 5
   m_Name: Level 3 Med
   m_TagString: Untagged
@@ -3401,6 +3477,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505190993}
   m_CullTransparentMesh: 1
+--- !u!114 &1505190998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505190993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1505190995}
+  buttonCommand: LoadLevel3M
 --- !u!1 &1677073289
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,7 +4233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2003421279}
-  buttonCommand: LoadLevel1H
+  buttonCommand: LoadLevel1E
 --- !u!1 &2130507384
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,6 +4246,7 @@ GameObject:
   - component: {fileID: 2130507388}
   - component: {fileID: 2130507387}
   - component: {fileID: 2130507386}
+  - component: {fileID: 2130507389}
   m_Layer: 5
   m_Name: Level 2 Hard
   m_TagString: Untagged
@@ -4265,6 +4356,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130507384}
   m_CullTransparentMesh: 1
+--- !u!114 &2130507389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130507384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2130507386}
+  buttonCommand: LoadLevel2H
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

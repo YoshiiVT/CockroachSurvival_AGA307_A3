@@ -18,11 +18,11 @@ public class SceneHandler : Singleton<SceneHandler>
         switch (_levelNo)
         {
             case 1:
-                SceneManager.LoadScene("Level_1"); _GM.gameState = GameState.Playing; _GM.StartLevel(_GM.gameDifficulty); break;
+                SceneManager.LoadScene("Level_1"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
             case 2:
-                SceneManager.LoadScene("Level_2"); _GM.gameState = GameState.Playing; _GM.StartLevel(_GM.gameDifficulty); break;
+                SceneManager.LoadScene("Level_2"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
             case 3:
-                SceneManager.LoadScene("Level_3"); _GM.gameState = GameState.Playing; _GM.StartLevel(_GM.gameDifficulty); break;
+                SceneManager.LoadScene("Level_3"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
         }
     }
 
@@ -30,6 +30,5 @@ public class SceneHandler : Singleton<SceneHandler>
     {
         SceneManager.LoadScene(_Scene);
     }
-
 
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public enum GameState
 {
@@ -120,7 +121,13 @@ public class GameManager : SingletonDontDestroy<GameManager>
         _CM.Death();
     }
 
-    public void StartLevel (GameDifficulty _LevelDifficulty)
+    public IEnumerator LoadingLevel()
+    {
+        yield return new WaitForSeconds(0.2f);
+        StartLevel(gameDifficulty);
+    }
+
+    private void StartLevel (GameDifficulty _LevelDifficulty)
     {
         playerOverlay.gameObject.SetActive(true);
         _EM.StartEnemies(_LevelDifficulty);
