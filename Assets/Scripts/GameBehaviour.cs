@@ -15,6 +15,8 @@ public class GameBehaviour : MonoBehaviour
     protected static ButtonManager _BM { get { return ButtonManager.instance; }}
 
     protected static SceneHandler _SM { get { return SceneHandler.instance; }}
+
+    protected static UIManager _UI { get { return UIManager.instance; }}
 }
 
  

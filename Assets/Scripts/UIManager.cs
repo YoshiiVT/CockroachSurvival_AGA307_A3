@@ -1,16 +1,39 @@
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private GameObject playerOverlay;
+    [SerializeField]
+    private GameObject deathScreen;
+    [SerializeField]
+    private GameObject winScreen;
 
-    // Update is called once per frame
-    void Update()
+    public void Toggle(string exept)
     {
-        
+        switch (exept)
+        {
+            case "playerOverlay":
+                playerOverlay.SetActive(true);
+                deathScreen.SetActive(false);
+                winScreen.SetActive(false); 
+                break;
+            case "deathScreen":
+                playerOverlay.SetActive(false);
+                deathScreen.SetActive(true);
+                winScreen.SetActive(false);
+                break;
+            case "winScreen":
+                playerOverlay.SetActive(false);
+                deathScreen.SetActive(false);
+                winScreen.SetActive(true);
+                break;
+            case "null":
+                playerOverlay.SetActive(false);
+                deathScreen.SetActive(false);
+                winScreen.SetActive(false);
+                break;
+
+        }
     }
 }

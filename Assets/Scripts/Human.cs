@@ -12,6 +12,7 @@ public class Human : GameBehaviour
     [SerializeField] private float distance;
     [SerializeField] private float perceptionDistance;
     [SerializeField] private int myDamage;
+    [SerializeField] private float mySpeed;
     [SerializeField] private float attackRange = 10f;
     [SerializeField] private bool isAttacking = false;
 
@@ -43,20 +44,25 @@ public class Human : GameBehaviour
                 wanderRadius = 10f;
                 searchDuration = 3f;
                 myDamage = 10;
+                mySpeed = 3.5f;
                 break;
             case EnemyDifficulty.Medium:
                 perceptionDistance = 10f;
-                wanderRadius = 10f;
-                searchDuration = 3f;
+                wanderRadius = 25f;
+                searchDuration = 6f;
+                mySpeed = 7f;
                 myDamage = 50;
                 break;
             case EnemyDifficulty.Hard:
                 perceptionDistance = 10f;
-                wanderRadius = 10f;
-                searchDuration = 3f;
+                wanderRadius = 50f;
+                searchDuration = 9f;
                 myDamage = 100;
+                mySpeed = 10f;
                 break;
         }
+
+        agent.speed = mySpeed;
     }
 
     void Update()
@@ -151,7 +157,7 @@ public class Human : GameBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         stompCollider.enabled = false;
-        agent.speed = 3.5f;
+        agent.speed = mySpeed;
         Debug.Log("Attack Ending");
         isAttacking = false;
     }

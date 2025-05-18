@@ -18,17 +18,24 @@ public class SceneHandler : Singleton<SceneHandler>
         switch (_levelNo)
         {
             case 1:
-                SceneManager.LoadScene("Level_1"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
+                SceneManager.LoadScene("Level_1");  StartCoroutine(_GM.LoadingLevel()); break;
             case 2:
-                SceneManager.LoadScene("Level_2"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
+                SceneManager.LoadScene("Level_2");  StartCoroutine(_GM.LoadingLevel()); break;
             case 3:
-                SceneManager.LoadScene("Level_3"); _GM.gameState = GameState.Playing; StartCoroutine(_GM.LoadingLevel()); break;
+                SceneManager.LoadScene("Level_3");  StartCoroutine(_GM.LoadingLevel()); break;
         }
     }
 
     public void SceneLoad(string _Scene)
     {
         SceneManager.LoadScene(_Scene);
+        _GM.gameState = GameState.Start;
+        _UI.Toggle("null");
     }
 
+    public void ReloadScene()
+    {
+        _GM.ReloadLevel();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

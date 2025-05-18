@@ -8,6 +8,7 @@ public enum GameState
     Start,
     Playing,
     Death,
+    Win
 }
 
 public enum GameDifficulty
@@ -22,24 +23,22 @@ public class GameManager : SingletonDontDestroy<GameManager>
     [Header("Player Health")]
     [SerializeField]
     private float health = 100f;
+    
 
     [Header("Dev View")]
     [SerializeField]
     private float starveValue = 1f;
     [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
     public GameState gameState;
     public GameDifficulty gameDifficulty;
 
     [Header("References")]
     [SerializeField]
-    private GameObject playerOverlay; 
-    [SerializeField]
     private Image healthBar;
     [SerializeField]
     private TextMeshProUGUI difficulty;
-    [SerializeField]
-    private TextMeshProUGUI timer;
+    
     
 
     void Start()
@@ -49,9 +48,7 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q)) {StartLevel(gameDifficulty);}
 
-        timer.text = "Time: " + _GT.gameTime;
         healthBar.fillAmount = health / 100;
 
 
@@ -118,20 +115,34 @@ public class GameManager : SingletonDontDestroy<GameManager>
     private void Die()
     {
         gameState = GameState.Death;
+        _UI.Toggle("deathScreen");
         _CM.Death();
     }
 
     public IEnumerator LoadingLevel()
     {
+        health = maxHealth;
+        _GM.gameState = GameState.Playing;
         yield return new WaitForSeconds(0.2f);
         StartLevel(gameDifficulty);
     }
 
     private void StartLevel (GameDifficulty _LevelDifficulty)
     {
-        playerOverlay.gameObject.SetActive(true);
+        _UI.Toggle("playerOverlay");
         _EM.StartEnemies(_LevelDifficulty);
         _TM.StartTrash(_LevelDifficulty);
+    }
 
+    public void ReloadLevel()
+    {
+        StartCoroutine(LoadingLevel());
+        gameState = GameState.Playing;
+    }
+
+    public void Win()
+    {
+        gameState = GameState.Win;
+        _UI.Toggle("winScreen");
     }
 }

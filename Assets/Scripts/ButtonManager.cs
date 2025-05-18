@@ -35,7 +35,9 @@ public class ButtonManager : Singleton<ButtonManager>
             case "LoadLevelCredits":
                 _SM.SceneLoad("Credits"); break;
             case "LoadMainMenu":
-                _SM.SceneLoad("Title_Menu"); break; 
+                _SM.SceneLoad("Title_Menu"); break;
+            case "ReloadScene":
+                _SM.ReloadScene(); break;
 
             case null:
                     Debug.LogWarning("Button Command Not Recognised");
