@@ -126,7 +126,7 @@ public class GameManager : SingletonDontDestroy<GameManager>
         OutofGame.Pause();
         health = maxHealth;
         _GM.gameState = GameState.Playing;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1.2f);
         StartLevel(gameDifficulty);
     }
 

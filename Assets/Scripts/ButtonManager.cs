@@ -37,7 +37,7 @@ public class ButtonManager : Singleton<ButtonManager>
             case "LoadMainMenu":
                 _SM.SceneLoad("Title_Menu"); break;
             case "ReloadScene":
-                _SM.ReloadScene(); break;
+                StartCoroutine(_SM.ReloadScene()); break;
 
             case null:
                     Debug.LogWarning("Button Command Not Recognised");

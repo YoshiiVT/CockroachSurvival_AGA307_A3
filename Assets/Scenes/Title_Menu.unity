@@ -683,6 +683,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4065582353240039723, guid: df24fc584e848484b88bf43e4ea54223, type: 3}
   m_PrefabInstance: {fileID: 485578573}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &450538692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743900645893577164, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+  m_PrefabInstance: {fileID: 5152513564317064850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &485578573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1497,11 +1502,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166222623}
   m_CullTransparentMesh: 1
---- !u!82 &1214594135 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8482355782629792680, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
-  m_PrefabInstance: {fileID: 5152513564317064850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1366474900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2048,6 +2048,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1b31d8b7613a844b0b527364372fbf, type: 3}
+--- !u!95 &1961539651 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5178478569956241335, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+  m_PrefabInstance: {fileID: 5152513564317064850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1991056805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5981821040134370320, guid: cc1b31d8b7613a844b0b527364372fbf, type: 3}
@@ -3380,14 +3385,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 444952156100944841, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
-      propertyPath: OutofGame
-      value: 
-      objectReference: {fileID: 1214594135}
     - target: {fileID: 1056773119207622202, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5028500533256105969, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: transitionAnim
+      value: 
+      objectReference: {fileID: 1961539651}
+    - target: {fileID: 5028500533256105969, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: transitionCanvas
+      value: 
+      objectReference: {fileID: 450538692}
     - target: {fileID: 5115745638819509582, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 492.83804
