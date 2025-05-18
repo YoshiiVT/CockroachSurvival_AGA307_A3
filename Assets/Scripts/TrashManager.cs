@@ -85,12 +85,12 @@ public class TrashManager : Singleton<TrashManager>
                     spawnedTrash = Instantiate(largeTrashPrefab, trashPoint.transform.position, trashPoint.transform.rotation);
                     _largeTrashCount--;
                 }
-                if (_mediumTrashCount != 0)
+                else if (_mediumTrashCount != 0)
                 {
                     spawnedTrash = Instantiate(mediumTrashPrefab, trashPoint.transform.position, trashPoint.transform.rotation);
                     _mediumTrashCount--;
                 }
-                if (_smallTrashCount != 0)
+                else if (_smallTrashCount != 0)
                 {
                     spawnedTrash = Instantiate(smallTrashPrefab, trashPoint.transform.position, trashPoint.transform.rotation);
                     _smallTrashCount--;

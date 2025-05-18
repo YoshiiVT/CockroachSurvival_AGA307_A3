@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &102214852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880672775046728547, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+  m_PrefabInstance: {fileID: 5152513564317064850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &182707574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1203,7 @@ GameObject:
   - component: {fileID: 1408015018}
   - component: {fileID: 1408015017}
   - component: {fileID: 1408015016}
+  - component: {fileID: 1408015019}
   m_Layer: 5
   m_Name: LevelSelect
   m_TagString: Untagged
@@ -1307,6 +1313,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408015014}
   m_CullTransparentMesh: 1
+--- !u!114 &1408015019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408015014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c126e3baf55ce8048ae1e287f2808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1408015016}
+  buttonCommand: LoadLevelSelect
 --- !u!1 &1709194318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1805,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 444952156100944841, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
+      propertyPath: playerOverlay
+      value: 
+      objectReference: {fileID: 102214852}
     - target: {fileID: 1056773119207622202, guid: 09e4a306ff11074438655c4fe4be945b, type: 3}
       propertyPath: m_Name
       value: GameManager

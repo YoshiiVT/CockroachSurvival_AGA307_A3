@@ -32,6 +32,8 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     [Header("References")]
     [SerializeField]
+    private GameObject playerOverlay; 
+    [SerializeField]
     private Image healthBar;
     [SerializeField]
     private TextMeshProUGUI difficulty;
@@ -46,6 +48,8 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Q)) {StartLevel(gameDifficulty);}
+
         timer.text = "Time: " + _GT.gameTime;
         healthBar.fillAmount = health / 100;
 
@@ -118,6 +122,7 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     public void StartLevel (GameDifficulty _LevelDifficulty)
     {
+        playerOverlay.gameObject.SetActive(true);
         _EM.StartEnemies(_LevelDifficulty);
         _TM.StartTrash(_LevelDifficulty);
 

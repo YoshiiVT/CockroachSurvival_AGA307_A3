@@ -11,6 +11,10 @@ public class GameBehaviour : MonoBehaviour
     protected static EnemyManager _EM { get { return EnemyManager.instance; } }
 
     protected static TrashManager _TM { get { return TrashManager.instance; }}
+
+    protected static ButtonManager _BM { get { return ButtonManager.instance; }}
+
+    protected static SceneHandler _SM { get { return SceneHandler.instance; }}
 }
 
  
